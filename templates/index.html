@@ -16,17 +16,26 @@
                     {% for col in range(0, num2): %}
                         {% if col % 2 == 0 %} 
                             <th class="light"></th>
+                        {% endif %}
                         {% else %}
                             <th class="dark"></th>
+                        {% endelse %}
+                    {% endfor %}
                 </tr>
+            {% endif %}
             {% else %}
                 <tr>
                     {% for col in range(0, num2): %}
                         {% if col % 2 == 0 %} 
                             <th class="dark"></th>
+                        {% endif %}
                         {% else %}
                             <th class="light"></th>
+                        {% endelse %}
+                        {% endfor %}
                 </tr>
+            {% endelse %}
+        {% endfor %}
     </table>
 </body>
 </html>
