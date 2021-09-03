@@ -6,36 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkerboard</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .color1{
+            background-color: {{ color1 }};
+        }
+        .color2{
+            background-color: {{ color2 }};
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>CHECK(erboard) this out!</h1>
     <table class="checkerboard">
-        {% for row in range(0, num1): %}
-            {% if row % 2 == 0}
-                <tr>
-                    {% for col in range(0, num2): %}
-                        {% if col % 2 == 0 %} 
-                            <th class="light"></th>
-                        {% endif %}
-                        {% else %}
-                            <th class="dark"></th>
-                        {% endelse %}
-                    {% endfor %}
-                </tr>
-            {% endif %}
-            {% else %}
-                <tr>
-                    {% for col in range(0, num2): %}
-                        {% if col % 2 == 0 %} 
-                            <th class="dark"></th>
-                        {% endif %}
-                        {% else %}
-                            <th class="light"></th>
-                        {% endelse %}
-                        {% endfor %}
-                </tr>
-            {% endelse %}
-        {% endfor %}
+    {% for row in range(num1): %}
+        <tr>
+            {% for col in range(num2): %}
+            <td class="box color{{ (row+col)%2+1 }}"></td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
     </table>
 </body>
 </html>

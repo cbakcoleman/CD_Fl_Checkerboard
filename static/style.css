@@ -1,13 +1,9 @@
 .checkerboard{
     border-collapse: collapse;
+    border: 2px solid black;
 }
-.light{
+.box{
     width: 50px;
     height: 50px;
-    background-color:lightyellow;
 }
-.dark{
-    width: 50px;
-    height: 50px;
-    background-color: chartreuse;
-}
+
