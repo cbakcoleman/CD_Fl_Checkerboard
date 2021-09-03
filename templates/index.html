@@ -8,87 +8,25 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    
     <table class="checkerboard">
-        <tr>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-        </tr>
-        <tr>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-        </tr>
-        <tr>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-        </tr>
-        <tr>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-        </tr>
-        <tr>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-        </tr>
-        <tr>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-        </tr>
-        <tr>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-        </tr>
-        <tr>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-            <th class="dark"></th>
-            <th class="light"></th>
-        </tr>
+        {% for row in range(0, num1): %}
+            {% if row % 2 == 0}
+                <tr>
+                    {% for col in range(0, num2): %}
+                        {% if col % 2 == 0 %} 
+                            <th class="light"></th>
+                        {% else %}
+                            <th class="dark"></th>
+                </tr>
+            {% else %}
+                <tr>
+                    {% for col in range(0, num2): %}
+                        {% if col % 2 == 0 %} 
+                            <th class="dark"></th>
+                        {% else %}
+                            <th class="light"></th>
+                </tr>
     </table>
 </body>
 </html>
